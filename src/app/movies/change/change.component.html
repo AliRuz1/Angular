@@ -1,0 +1,11 @@
+<h2>Movies</h2>
+<div>
+    <button (click)="gotoMovies(movie)">Back</button>
+</div>
+<ul class="movies">
+  <li *ngFor="let movie of movies$ | async" [class.selected]="movie.id === selectedId">
+    <a [routerLink]="['/movie', movie.id]">
+      <span class="badge">{{ movie.id }}</span>{{ movie.name }}
+    </a>
+  </li>
+</ul>
